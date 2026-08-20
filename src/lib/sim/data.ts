@@ -1,25 +1,25 @@
 import type { LinkDef, PartDef } from "./types";
 
-import escAsset from "@/assets/esc.png.asset.json";
-import motorAsset from "@/assets/motor.png.asset.json";
-import batteryAsset from "@/assets/battery.png.asset.json";
-import pdbAsset from "@/assets/pdb.png.asset.json";
-import receiverAsset from "@/assets/receiver.png.asset.json";
-import gpsAsset from "@/assets/gps.png.asset.json";
-import propAsset from "@/assets/prop.png.asset.json";
-import xt60Asset from "@/assets/xt60.png.asset.json";
-import fcAsset from "@/assets/fc.png.asset.json";
+import escPng from "@/assets/esc.png";
+import motorPng from "@/assets/motor.png";
+import batteryPng from "@/assets/battery.png";
+import pdbPng from "@/assets/pdb.png";
+import receiverPng from "@/assets/receiver.png";
+import gpsPng from "@/assets/gps.png";
+import propPng from "@/assets/prop.png";
+import xt60Png from "@/assets/xt60.png";
+import fcPng from "@/assets/fc.png";
 
 export const IMG = {
-  esc: escAsset.url,
-  motor: motorAsset.url,
-  battery: batteryAsset.url,
-  pdb: pdbAsset.url,
-  receiver: receiverAsset.url,
-  gps: gpsAsset.url,
-  prop: propAsset.url,
-  xt60: xt60Asset.url,
-  fc: fcAsset.url,
+  esc: escPng,
+  motor: motorPng,
+  battery: batteryPng,
+  pdb: pdbPng,
+  receiver: receiverPng,
+  gps: gpsPng,
+  prop: propPng,
+  xt60: xt60Png,
+  fc: fcPng,
 };
 
 export const WORKSPACE = { w: 1040, h: 760 };
