@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  # Nitro's netlify preset writes static assets here
+  publish = "dist"
+
+# The serverless function is auto-generated at .netlify/functions-internal/
+# Netlify detects it automatically — no manual function config needed.
+# Nitro also generates _redirects and _headers in the publish dir for routing.
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
