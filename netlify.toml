@@ -1,18 +1,14 @@
 [build]
   command = "npm run build"
-  publish = ".output/public"
+  # Nitro's netlify preset writes static assets here
+  publish = "dist"
 
-[functions]
-  # Nitro's netlify preset emits the serverless handler under .output/server
-  directory = ".output/server"
+# The serverless function is auto-generated at .netlify/functions-internal/
+# Netlify detects it automatically — no manual function config needed.
+# Nitro also generates _redirects and _headers in the publish dir for routing.
 
-# TanStack Start / Nitro handle SPA + SSR routing natively, but we add a
-# catch-all so deep links never 404 before the function boots.
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/index"
-  status = 200
-  force = false
+[build.environment]
+  NODE_VERSION = "20"
 
 [[headers]]
   for = "/assets/*"
