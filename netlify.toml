@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = ".output/public"
+
+[functions]
+  # Nitro's netlify preset emits the serverless handler under .output/server
+  directory = ".output/server"
+
+# TanStack Start / Nitro handle SPA + SSR routing natively, but we add a
+# catch-all so deep links never 404 before the function boots.
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/index"
+  status = 200
+  force = false
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
